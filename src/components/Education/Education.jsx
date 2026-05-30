@@ -6,8 +6,17 @@ import { FaGraduationCap, FaLaptopCode, FaSchool, FaTools } from 'react-icons/fa
 const Education = () => {
   // Education Data based on your resume
   const educationData = [
+
     {
-      id: 1,
+        id: 1,
+        title: "Frontend Web Development Training",
+        institution: "Taksh IT Solutions Private Limited ",
+        year: "March 2026 - Present",
+        description: "Currently undergoing 6 months of professional Frontend Web Development training at Taksh IT Solutions Private Limited, specializing in React.js. Gaining hands-on experience in building responsive web applications, API integration, component-based architecture, and modern frontend development practices through real-world projects.",
+        icon: <FaLaptopCode/>
+    },
+    {
+      id: 2,
       title: "Bachelor of Computer Applications (Cloud & Cyber Security)",
       institution: "IIMT University",
       year: "2023 - 2026",
@@ -15,7 +24,7 @@ const Education = () => {
       icon: <FaGraduationCap />
     },
     {
-      id: 2,
+      id: 3,
       title: "12th (Intermediate)",
       institution: "U.P. Board",
       year: "Passed in 2023",
@@ -23,7 +32,7 @@ const Education = () => {
       icon: <FaSchool />
     },
     {
-      id: 3,
+      id: 4,
       title: "ITI Diesel Mechanic",
       institution: "Industrial Training Institute",
       year: "2020 - 2022",
@@ -31,7 +40,7 @@ const Education = () => {
       icon: <FaTools />
     },
     {
-      id: 4,
+      id: 5,
       title: "10th (High School)",
       institution: "U.P. Board",
       year: "Passed in 2020",
@@ -43,7 +52,7 @@ const Education = () => {
         title: "Frontend Web Development Training",
         year: "March 2026 - Present",
         description: "Currently undergoing 6 months of professional Frontend Web Development training at Taksh IT Solutions Private Limited, specializing in React.js. Gaining hands-on experience in building responsive web applications, API integration, component-based architecture, and modern frontend development practices through real-world projects.",
-        icon: FaLaptopCode
+        icon: <FaLaptopCode/>
     }
 
   ];
