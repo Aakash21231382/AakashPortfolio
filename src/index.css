@@ -18,3 +18,14 @@
   background-position: right center;
   box-shadow: 0 8px 25px rgba(255, 0, 160, 0.5);
 }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Agar Navbar wrapper ki wajah se koi overflow hai, usko bhi handle karne ke liye */
+.custom-navbar {
+  max-width: 100vw;
+}
