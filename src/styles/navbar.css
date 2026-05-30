@@ -1,0 +1,157 @@
+
+.custom-navbar {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 16px 0;
+  z-index: 1000;
+}
+.logo {
+    font-size: 34px;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(90deg, #38bdf8, #e247be, #d818ae);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+.logo:hover{
+    color: white;
+}
+.nav-link {
+  color: white !important;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 18px;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #38bdf8 !important;
+}
+.nav-hero-btn {
+  padding: 12px 28px;
+  border: none;
+  outline: none;
+  background: #38bdf8;
+  color: white;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-hero-btn:hover {
+  background: #0284c7;
+  transform: translateY(-2px);
+}
+.custom-toggler {
+  border: none !important;
+  background: transparent;
+}
+
+.custom-toggler:focus {
+  box-shadow: none !important;
+}
+
+.toggle-icon {
+  color: #38bdf8;
+  font-size: 30px;
+}
+
+@media (min-width: 992px) {
+
+  .custom-sidebar-menu {
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+  }
+
+  .custom-nav-links {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-item:first-child {
+    margin-left: auto;
+  }
+
+
+  .hire-btn-wrapper {
+    margin-left: auto;
+  }
+
+  .close-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+
+  .custom-sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 280px;
+    height: 100vh;
+
+    background: #0f172a;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 100px;
+
+    transform: translateX(-100%);
+    transition: 0.4s ease-in-out;
+
+    z-index: 2000;
+
+    box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+  }
+
+  .custom-sidebar-menu.show-sidebar {
+    transform: translateX(0);
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    background: transparent;
+    border: none;
+
+    color: #38bdf8;
+    font-size: 34px;
+
+    cursor: pointer;
+  }
+  .custom-nav-links {
+    width: 100%;
+    align-items: flex-start !important;
+    padding-left: 40px;
+  }
+
+  .nav-link {
+    margin: 0 0 30px 0;
+    font-size: 22px;
+  }
+
+
+
+  .hire-btn-wrapper {
+    margin-top: 20px;
+  }
+
+  .nav-hero-btn {
+    width: 180px;
+  }
+}

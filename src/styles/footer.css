@@ -1,0 +1,214 @@
+/* Base Footer Styling */
+.footer-section {
+  background-color: #0f172a; /* Dark background */
+  padding: 60px 0 20px 0;
+  border-top: 1px solid rgba(56, 189, 248, 0.1); /* Subtle top border */
+  color: #cbd5e1;
+}
+
+.footer-content {
+  margin-bottom: 40px;
+}
+
+.footer-brand {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  /* Premium Gradient Text */
+  background: linear-gradient(90deg, #38bdf8, #e247be);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.footer-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #94a3b8;
+  max-width: 90%;
+}
+
+/* =========================================
+   Footer CTA Buttons (Hire Me & Download CV)
+   ========================================= */
+.footer-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-footer-hire {
+  padding: 8px 25px;
+  background: linear-gradient(90deg, #38bdf8, #e247be);
+  color: white;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-footer-hire:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(226, 71, 190, 0.4);
+  color: white;
+}
+
+.btn-footer-cv {
+  padding: 8px 20px;
+  background: transparent;
+  color: #38bdf8;
+  border: 1px solid #38bdf8;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.btn-footer-cv:hover {
+  background: rgba(56, 189, 248, 0.1);
+  color: #ffffff;
+  border-color: #e247be;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   Quick Links & Social Icons
+   ========================================= */
+.footer-heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-links a:hover {
+  color: #38bdf8;
+  padding-left: 5px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(30, 41, 59, 0.8);
+  color: #cbd5e1;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.social-icon:hover {
+  background: #38bdf8;
+  color: #ffffff;
+  border-color: #38bdf8;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
+}
+
+/* =========================================
+   Bottom Section
+   ========================================= */
+.footer-bottom {
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.copyright-text {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.back-to-top {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border: 1px solid #38bdf8;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  background: #38bdf8;
+  color: white;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   Responsive Adjustments
+   ========================================= */
+@media (max-width: 991px) {
+  .footer-links-col, .footer-social-col {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-section {
+    text-align: center;
+  }
+  
+  .footer-desc {
+    margin: 0 auto;
+  }
+
+  .footer-cta-buttons {
+    justify-content: center; /* Mobile mein buttons beech mein aayenge */
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

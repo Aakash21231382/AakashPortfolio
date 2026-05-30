@@ -1,0 +1,163 @@
+/* Base Section Styling */
+.education-section {
+  padding: 80px 0;
+  background-color: #040914; /* Dark background matching contact/about */
+  min-height: 100vh;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Vertical Line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15px; /* Line position */
+  height: 100%;
+  width: 2px;
+  background: rgba(56, 189, 248, 0.2);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline Icons */
+.timeline-icon {
+  position: absolute;
+  top: 0;
+  left: -40px; /* Aligning icon over the vertical line */
+  width: 50px;
+  height: 50px;
+  background: #0f172a;
+  border: 2px solid #38bdf8;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #38bdf8;
+  font-size: 22px;
+  z-index: 1;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-icon {
+  background: #d455e4;
+  color: white;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+  transform: scale(1.1);
+}
+
+/* =========================================
+   Timeline Card / Content
+   ========================================= */
+.timeline-content {
+  background: rgba(30, 41, 59, 0.6);
+  padding: 25px 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-left: 30px; /* Space between line and card */
+  position: relative;
+}
+
+.timeline-item:hover .timeline-content {
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Little triangle pointing to the line */
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: -10px;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent rgba(30, 41, 59, 0.6) transparent transparent;
+  transition: all 0.3s ease;
+}
+
+.timeline-year {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.timeline-title {
+  color: #e2e8f0;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.timeline-institution {
+  color: #e247be; /* Magenta theme color for distinction */
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.timeline-text {
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* =========================================
+   Responsive Adjustments
+   ========================================= */
+@media (max-width: 767px) {
+  .timeline {
+    padding-left: 20px;
+  }
+  
+  .timeline::before {
+    left: 0;
+  }
+  
+  .timeline-icon {
+    left: -25px; /* Adjusting icon position for mobile */
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .timeline-content {
+    margin-left: 15px;
+    padding: 20px;
+  }
+  
+  .timeline-title {
+    font-size: 18px;
+  }
+  
+  .timeline-institution {
+    font-size: 15px;
+  }
+}

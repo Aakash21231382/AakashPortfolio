@@ -1,0 +1,197 @@
+/* Base Section Styling */
+.projects-section {
+  padding: 50px 0;
+  background-color: #0b1120;
+  min-height: 100vh;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+
+
+.project-card {
+  background: #1e293b;
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: #38bdf8;
+  box-shadow: 0 15px 30px rgba(56, 189, 248, 0.15);
+}
+
+
+/* Wrapper ko update kiya gaya hai image ko center mein rakhne ke liye */
+.project-img-wrapper {
+  width: 100%;
+  height: 230px; /* Thodi height badha di hai taaki image aur clear dikhe */
+  overflow: hidden;
+  background: #0f172a; /* Agar image chhoti hogi toh ye dark background dikhega */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Yahan 'contain' lagaya gaya hai taaki image full show ho */
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* <--- YE PROPERTY IMAGE KO KATNE SE ROKEGI */
+  transition: transform 0.5s ease;
+}
+
+/* Hover par zoom thoda kam rakha hai taaki zoom hone par bhi image achhi lage */
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+/* Hover par wahi purana zoom effect rahega */
+.project-card:hover .project-img {
+  transform: scale(1.1);
+}
+.project-content {
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-title {
+  color: #e2e8f0;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.project-desc {
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.project-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+.btn-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #38bdf8, #0284c7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-live:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4);
+  color: white;
+}
+
+.btn-disabled {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(148, 163, 184, 0.1);
+  color: #94a3b8;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px dashed #64748b;
+  cursor: not-allowed;
+}
+
+.btn-github {
+  color: #e2e8f0;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.btn-github:hover {
+  color: #38bdf8;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .project-img-wrapper {
+    height: 200px;
+  }
+  .project-title {
+    font-size: 20px;
+  }
+  .section-title {
+    font-size: 32px;
+  }
+}
+
+
+
+/* ...aapka baaki purana CSS... */
+
+.project-title {
+  color: #e2e8f0;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px; /* Thoda gap kam kiya taaki badges fit aayen */
+}
+
+/* =========================================
+   Tech Stack Badges Styling
+   ========================================= */
+.tech-stack-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tech-badge {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tech-badge:hover {
+  background: #38bdf8;
+  color: #040914; /* Dark color text on hover for contrast */
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(56, 189, 248, 0.4);
+}
+
+.project-desc {
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+/* ...aapka baaki purana CSS... */

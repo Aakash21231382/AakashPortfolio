@@ -1,0 +1,67 @@
+/* Purana code exactly waisa hi rahega */
+.skills-section {
+  padding: 80px 0;
+  background-color: #0b1120; 
+  min-height: 50vh;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+
+
+.skill-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 20px 25px;
+  border-radius: 8px;
+  border-left: 4px solid #f838ae; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* =====================================
+   Naya Icon Style 
+   ===================================== */
+.skill-icon {
+  font-size: 28px; /* Icon ka size */
+  margin-right: 15px; /* Text aur icon ke beech space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* Hover par icon halka sa ghumega (premium feel) */
+.skill-card:hover .skill-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.skill-card h4 {
+  color: #e2e8f0; 
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.skill-card:hover {
+  transform: translateY(-8px); 
+  background: rgba(30, 41, 59, 1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-left: 8px solid #023449; 
+}
+
+.skill-card:hover h4 {
+  color: #38bdf8;
+}

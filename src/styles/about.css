@@ -1,0 +1,88 @@
+/* Base Section Styling */
+.about-section {
+  padding: 80px 0;
+  background: #111827; 
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 45px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 450px; 
+  border-radius: 20px;
+  transition: 0.5s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.about-image:hover {
+  transform: scale(1.03);
+}
+
+
+.about-content {
+  padding-left: 30px;
+}
+
+.about-text {
+  color: #cbd5e1;
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  
+
+  line-height: 2;
+  letter-spacing: 0.5px; 
+  word-spacing: 1.5px; 
+}
+
+
+@media (max-width: 991px) {
+  .about-section {
+    padding: 70px 0;
+    min-height: auto;
+  }
+
+  .about-content {
+    padding-left: 0;
+    margin-top: 20px; 
+  }
+
+  .section-title {
+    font-size: 38px;
+  }
+
+  .about-image {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .about-text {
+    font-size: 15px;
+    
+  
+    line-height: 1.8; 
+    letter-spacing: 0.3px;
+    word-spacing: 1px;
+  }
+
+  .about-image {
+    max-width: 300px; 
+  }
+}
