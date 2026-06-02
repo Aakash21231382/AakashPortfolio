@@ -47,13 +47,7 @@ const Education = () => {
       description: "Completed secondary education successfully.",
       icon: <FaSchool />
     },
-    {
-        id: 5,
-        title: "Frontend Web Development Training",
-        year: "March 2026 - Present",
-        description: "Currently undergoing 6 months of professional Frontend Web Development training at Taksh IT Solutions Private Limited, specializing in React.js. Gaining hands-on experience in building responsive web applications, API integration, component-based architecture, and modern frontend development practices through real-world projects.",
-        icon: <FaLaptopCode/>
-    }
+
 
   ];
 

@@ -9,7 +9,8 @@ import Mern from "../../assets/Mern.png";
 import Cyber from "../../assets/cyber.png";
 import Introduction from "../../assets/introduction.png";
 import Advance from "../../assets/advance-azure.png";
-
+import Cloud from '../../assets/cloud.png'
+import IOT from '../../assets/iot.png'
 const CertificateCard = ({ image, title, type, index, onView }) => {
   return (
     <motion.div
@@ -78,6 +79,18 @@ const Certificates = () => {
       title: "Introduction to Cloud Computing - IIT Kanpur",
       type: "Cloud Computing Basics",
       image: Introduction,
+    },
+    {
+      id: 6,
+      title: "Introduction to Internet of Things (IoT)",
+      type: "NPTEL Elite Certified Course",
+      image: IOT,
+    },
+    {
+      id: 7,
+      title: "Cloud Computing",
+      type: "NPTEL Elite Certification",
+      image: Cloud,
     },
   ];
 
