@@ -20,7 +20,6 @@ const Home = () => {
       <Education/>
       <Projects />
       <Certificate/>
-       
       <Contact />
       <Footer />
     </>

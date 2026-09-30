@@ -1,163 +1,467 @@
-/* Base Section Styling */
+/* =========================================
+   Education Section (Alternating Vertical Timeline)
+   ========================================= */
+
 .education-section {
-  padding: 80px 0;
-  background-color: #040914; /* Dark background matching contact/about */
+  padding: 90px 0;
+  background-color: var(--bg-alt);
   min-height: 100vh;
-}
-
-.section-title {
-  color: #ffffff;
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-}
-
-.timeline {
+  transition: background-color 0.3s ease;
   position: relative;
-  padding-left: 40px;
 }
 
-/* Vertical Line */
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 15px; /* Line position */
-  height: 100%;
-  width: 2px;
-  background: rgba(56, 189, 248, 0.2);
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 40px;
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-/* Timeline Icons */
-.timeline-icon {
-  position: absolute;
-  top: 0;
-  left: -40px; /* Aligning icon over the vertical line */
-  width: 50px;
-  height: 50px;
-  background: #0f172a;
-  border: 2px solid #38bdf8;
-  border-radius: 50%;
+/* 1. Category Switcher Tabs (Education vs Training) */
+.edu-nav-tabs-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  color: #38bdf8;
-  font-size: 22px;
-  z-index: 1;
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
-  transition: all 0.3s ease;
 }
 
-.timeline-item:hover .timeline-icon {
-  background: #d455e4;
-  color: white;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
-  transform: scale(1.1);
+.edu-nav-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px;
+  border-radius: 50px;
+  border: 1px solid var(--border-card);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.edu-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 40px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  outline: none;
+}
+
+.edu-tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.edu-tab-btn.active-tab {
+  background: #38bdf8;
+  color: #0b1120 !important;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+}
+
+.tab-pulse-badge {
+  background: #10b981;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 20px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.edu-tab-btn.active-tab .tab-pulse-badge {
+  background: #0f172a;
+  color: #34d399;
 }
 
 /* =========================================
-   Timeline Card / Content
+   2. Alternating Vertical Timeline View
    ========================================= */
-.timeline-content {
-  background: rgba(30, 41, 59, 0.6);
-  padding: 25px 30px;
-  border-radius: 15px;
-  border: 1px solid rgba(148, 163, 184, 0.1);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  margin-left: 30px; /* Space between line and card */
+.edu-timeline-wrapper {
   position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-.timeline-item:hover .timeline-content {
-  border-color: rgba(56, 189, 248, 0.4);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Little triangle pointing to the line */
-.timeline-content::before {
-  content: '';
+/* Center Vertical Spine Line */
+.edu-timeline-spine {
   position: absolute;
   top: 15px;
-  left: -10px;
+  bottom: 15px;
+  left: 50%;
+  width: 3px;
+  background: #38bdf8;
+  transform: translateX(-50%);
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.6);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.edu-timeline-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  gap: 40px;
+}
+
+.edu-timeline-row {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+/* Left-side Card Row */
+.edu-timeline-row.row-left {
+  justify-content: flex-start;
+}
+
+.edu-timeline-row.row-left .edu-timeline-card {
+  margin-right: 50%;
+  width: calc(50% - 40px);
+}
+
+/* Right-side Card Row */
+.edu-timeline-row.row-right {
+  justify-content: flex-end;
+}
+
+.edu-timeline-row.row-right .edu-timeline-card {
+  margin-left: 50%;
+  width: calc(50% - 40px);
+}
+
+/* Glowing Center Node Ring */
+.edu-timeline-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.node-outer-ring {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3.5px solid #38bdf8;
+  background: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.edu-timeline-row:hover .node-outer-ring {
+  transform: scale(1.25);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.9);
+}
+
+.node-inner-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+}
+
+/* Timeline Card Structure (Matching screenshot) */
+.edu-timeline-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-card);
+  border-radius: 18px;
+  padding: 22px 24px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.edu-timeline-card:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+  box-shadow: 0 14px 35px rgba(56, 189, 248, 0.2);
+}
+
+/* Pointer Arrow Triangles */
+.card-pointer-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
   border-style: solid;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent rgba(30, 41, 59, 0.6) transparent transparent;
-  transition: all 0.3s ease;
 }
 
-.timeline-year {
-  display: inline-block;
-  background: rgba(56, 189, 248, 0.15);
+.arrow-left {
+  right: -10px;
+  border-width: 8px 0 8px 10px;
+  border-color: transparent transparent transparent #38bdf8;
+}
+
+.arrow-right {
+  left: -10px;
+  border-width: 8px 10px 8px 0;
+  border-color: transparent #38bdf8 transparent transparent;
+}
+
+/* Card Typography & Layout */
+.edu-card-header {
+  margin-bottom: 6px;
+}
+
+.edu-cap-icon {
+  font-size: 18px;
   color: #38bdf8;
-  padding: 5px 15px;
+}
+
+.edu-degree-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-primary) !important;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.edu-card-inst-line {
+  margin-bottom: 10px;
+}
+
+.inst-name {
+  color: #38bdf8 !important;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.edu-card-meta-row {
+  margin-bottom: 10px;
+}
+
+.edu-year-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary) !important;
+  background: var(--theme-toggle-bg);
+  padding: 3px 12px;
+  border-radius: 16px;
+  border: 1px solid var(--border-card);
+}
+
+.edu-card-spec-box {
+  margin-top: 4px;
+}
+
+.spec-label {
+  font-size: 13px;
+  color: var(--text-desc) !important;
+  font-weight: 500;
+}
+
+/* =========================================
+   3. Professional Training View
+   ========================================= */
+.edu-training-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.training-featured-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-card);
+  border-radius: 26px;
+  padding: 44px 46px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+}
+
+.training-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #38bdf8 0%, #10b981 100%);
+}
+
+.training-card-header {
+  border-bottom: 1px solid var(--border-card);
+  padding-bottom: 20px;
+  margin-bottom: 22px;
+}
+
+.training-badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+  padding: 4px 12px;
   border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.timeline-title {
-  color: #e2e8f0;
-  font-size: 22px;
+  font-size: 11.5px;
   font-weight: 700;
-  margin-bottom: 5px;
+  border: 1px solid rgba(34, 197, 94, 0.35);
 }
 
-.timeline-institution {
-  color: #e247be; /* Magenta theme color for distinction */
-  font-size: 16px;
+.pulse-green-dot {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #22c55e;
+}
+
+.training-duration-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
   font-weight: 600;
-  margin-bottom: 15px;
+  color: var(--text-secondary) !important;
+  background: var(--theme-toggle-bg);
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-card);
 }
 
-.timeline-text {
-  color: #94a3b8;
-  font-size: 15px;
-  line-height: 1.7;
+.training-main-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary) !important;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.training-role-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 6px 0 0 0;
+}
+
+.training-company-line {
+  font-size: 14px;
+  color: var(--text-desc) !important;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.training-company-line strong {
+  color: var(--text-primary) !important;
+}
+
+.training-overview-text {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--text-desc) !important;
   margin: 0;
 }
 
+.training-subheading {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.training-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.training-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-desc) !important;
+  line-height: 1.5;
+}
+
+.check-icon {
+  margin-top: 3px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.training-skill-chip {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.training-skill-chip:hover {
+  transform: translateY(-2px);
+}
+
 /* =========================================
-   Responsive Adjustments
+   4. Mobile / Tablet Responsive Styles
    ========================================= */
+@media (max-width: 991px) {
+  .edu-timeline-spine {
+    left: 24px;
+  }
+
+  .edu-timeline-node {
+    left: 24px;
+  }
+
+  .edu-timeline-row.row-left .edu-timeline-card,
+  .edu-timeline-row.row-right .edu-timeline-card {
+    margin-left: 56px;
+    margin-right: 0;
+    width: calc(100% - 56px);
+  }
+
+  .arrow-left,
+  .arrow-right {
+    left: -10px;
+    right: auto;
+    border-width: 8px 10px 8px 0;
+    border-color: transparent #38bdf8 transparent transparent;
+  }
+}
+
 @media (max-width: 767px) {
-  .timeline {
-    padding-left: 20px;
+  .education-section {
+    padding: 60px 0;
   }
-  
-  .timeline::before {
-    left: 0;
+
+  .edu-tab-btn {
+    padding: 8px 16px;
+    font-size: 12.5px;
   }
-  
-  .timeline-icon {
-    left: -25px; /* Adjusting icon position for mobile */
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+
+  .edu-timeline-card {
+    padding: 18px 18px;
   }
-  
-  .timeline-content {
-    margin-left: 15px;
-    padding: 20px;
-  }
-  
-  .timeline-title {
-    font-size: 18px;
-  }
-  
-  .timeline-institution {
+
+  .edu-degree-title {
     font-size: 15px;
+  }
+
+  .training-featured-card {
+    padding: 24px 18px;
+  }
+
+  .training-main-title {
+    font-size: 20px;
   }
 }

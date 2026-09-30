@@ -1,0 +1,57 @@
+/* Transparent Video Showcase Section */
+.video-showcase-section {
+  position: relative;
+  padding: 40px 0 60px 0;
+  background: transparent !important;
+  background-color: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video-showcase-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.showcase-video {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  display: block;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+@media (max-width: 991px) {
+  .video-showcase-section {
+    padding: 30px 0 45px 0;
+  }
+  .showcase-video {
+    max-width: 500px;
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .video-showcase-section {
+    padding: 20px 0 35px 0;
+  }
+  .showcase-video {
+    max-width: 340px;
+    max-height: 300px;
+  }
+}

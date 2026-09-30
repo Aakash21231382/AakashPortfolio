@@ -1,67 +1,123 @@
-/* Purana code exactly waisa hi rahega */
+/* =========================================
+   Skills Section (Clean Grid Matching Reference Design)
+   ========================================= */
 .skills-section {
-  padding: 80px 0;
-  background-color: #0b1120; 
-  min-height: 50vh;
+  padding: 95px 0;
+  background-color: var(--bg-primary); 
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+  position: relative;
 }
 
-.section-title {
-  color: #ffffff;
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+/* Dual-Tone Title */
+.skills-title-gradient {
+  background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
 }
 
-
-
-.skill-card {
-  background: rgba(30, 41, 59, 0.7);
-  backdrop-filter: blur(10px);
-  padding: 20px 25px;
-  border-radius: 8px;
-  border-left: 4px solid #f838ae; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
+/* Modern Rounded Skill Tile */
+.skill-icon-tile {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid var(--border-card);
+  border-radius: 22px;
+  padding: 32px 16px 26px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
   height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-/* =====================================
-   Naya Icon Style 
-   ===================================== */
-.skill-icon {
-  font-size: 28px; /* Icon ka size */
-  margin-right: 15px; /* Text aur icon ke beech space */
+.skill-icon-tile:hover {
+  transform: translateY(-8px);
+  border-color: var(--skill-color);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 22px var(--skill-glow);
+}
+
+[data-theme="light"] .skill-icon-tile {
+  background: #ffffff !important;
+  border-color: rgba(203, 213, 225, 0.85);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .skill-icon-tile:hover {
+  border-color: var(--skill-color);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1), 0 0 22px var(--skill-glow);
+}
+
+/* Large Centered Brand Icon */
+.skill-tile-icon {
+  font-size: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  margin-bottom: 16px;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
 }
 
-/* Hover par icon halka sa ghumega (premium feel) */
-.skill-card:hover .skill-icon {
-  transform: scale(1.1) rotate(5deg);
+.skill-icon-tile:hover .skill-tile-icon {
+  transform: scale(1.15) translateY(-2px);
 }
 
-.skill-card h4 {
-  color: #e2e8f0; 
-  font-size: 18px;
-  font-weight: 600;
+/* Technology Title */
+.skill-tile-title {
+  color: var(--text-primary) !important;
+  font-size: 15px;
+  font-weight: 700;
   margin: 0;
+  letter-spacing: -0.2px;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
-/* Hover Effect */
-.skill-card:hover {
-  transform: translateY(-8px); 
-  background: rgba(30, 41, 59, 1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border-left: 8px solid #023449; 
+.skill-icon-tile:hover .skill-tile-title {
+  color: #ffffff !important;
 }
 
-.skill-card:hover h4 {
-  color: #38bdf8;
+[data-theme="light"] .skill-icon-tile:hover .skill-tile-title {
+  color: var(--text-primary) !important;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 1200px) {
+  .skill-tile-icon {
+    font-size: 46px;
+  }
+  .skill-tile-title {
+    font-size: 14px;
+  }
+  .skill-icon-tile {
+    padding: 26px 14px 22px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 70px 0;
+  }
+  .skill-icon-tile {
+    padding: 22px 12px 18px;
+    border-radius: 16px;
+  }
+  .skill-tile-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+  .skill-tile-title {
+    font-size: 13px;
+  }
 }

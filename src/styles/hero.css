@@ -1,21 +1,35 @@
-/* Base Desktop Styles */
+/* =========================================
+   Base Hero Section Styles (3D Interactive)
+   ========================================= */
 .hero-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 80px 0; 
-  background-color: #0b1120; 
+  padding: 100px 0 60px 0; 
+  background-color: var(--bg-primary); 
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
+
 .hero-title {
-  background: linear-gradient(90deg, #38bdf8, #e247be, #d818ae);
+  color: var(--text-primary) !important;
+  font-size: 68px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.hero-name-gradient {
+  background: var(--brand-logo-gradient);
+  filter: var(--brand-logo-shadow);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  font-size: 70px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 10px;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .subtitle-wrapper {
@@ -26,8 +40,8 @@
 }
 
 .hero-subtitle {
-  color: #38bdf8;
-  font-size: 32px;
+  color: var(--accent-cyan) !important;
+  font-size: 30px;
   font-weight: 600;
   display: inline-block;
   animation: slideLeftToRight 6s linear infinite;
@@ -49,67 +63,419 @@
     opacity: 0;
   }
 }
+
 .hero-description {
-  font-size: 18px;
-  color: #d1d5db; 
-  margin-bottom: 30px;
+  font-size: 17px;
+  color: var(--text-desc) !important; 
+  margin-bottom: 35px;
   line-height: 1.8; 
-  letter-spacing: 0.5px; 
+  letter-spacing: 0.3px; 
   font-weight: 400;
   max-width: 90%;
+  transition: color 0.3s ease;
 }
+
 .hero-btn {
-    padding: 12px 35px;
-    border: none;
-    background: linear-gradient(90deg, #00d2ff 0%, #e247be 50%, #d818ae 100%);
-    background-size: 200% auto;
-    color: white;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.4s ease;
-
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
-  }
-  
-  .hero-btn:hover {
-    transform: translateY(-3px) scale(1.02);
-
-    background-position: right center;
-
-    box-shadow: 0 8px 25px rgba(255, 0, 160, 0.5);
-  }
-
-
-.hero-image {
-  width: 100%;
-  margin-top: 100px;
-  max-width: 300px; 
-  animation: float 4s ease-in-out infinite;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 12px 32px;
+  border: none;
+  background: var(--btn-primary-bg);
+  background-size: 200% auto;
+  color: var(--btn-primary-color) !important;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: var(--btn-primary-shadow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
-@keyframes float {
+.hero-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  background-position: right center;
+  box-shadow: var(--btn-primary-hover-shadow);
+  color: #ffffff !important;
+}
+
+.hero-btn-outline {
+  padding: 12px 30px;
+  border: 2px solid var(--btn-outline-border);
+  background: var(--btn-outline-bg);
+  color: var(--btn-outline-color) !important;
+  border-radius: 30px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+  box-shadow: var(--btn-outline-shadow);
+}
+
+.hero-btn-outline:hover {
+  background: var(--btn-outline-hover-bg);
+  color: var(--btn-outline-hover-color) !important;
+  border-color: var(--btn-outline-hover-border);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+}
+
+/* 3D Interactive Avatar Stage */
+.hero-avatar-stage {
+  perspective: 1200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 480px;
+  padding: 20px 0;
+}
+
+/* Ambient Soft Glowing Halo */
+.avatar-ambient-glow {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.3) 0%,
+    rgba(226, 71, 190, 0.18) 45%,
+    transparent 70%
+  );
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 1;
+  animation: glowPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
   0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
+    transform: scale(0.9);
+    opacity: 0.7;
   }
   100% {
-    transform: translateY(0px);
+    transform: scale(1.15);
+    opacity: 1;
   }
+}
+
+/* =========================================
+   Hero Multi-Styled Infinite Rotating Circles (Unique Theme)
+   ========================================= */
+.hero-rings-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* Hero Ring 1: Outer Electric Purple & Gold Arc Orbit */
+.h-ring-1 {
+  width: 480px;
+  height: 480px;
+  border: 1.5px solid transparent;
+  border-top: 2.5px solid rgba(139, 92, 246, 0.75);
+  border-bottom: 2.5px solid rgba(245, 158, 11, 0.75);
+  border-left: 2px dashed rgba(139, 92, 246, 0.45);
+  border-right: 2px dashed rgba(245, 158, 11, 0.45);
+  animation: heroRotateCW 26s linear infinite;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.15);
+}
+
+/* Hero Ring 2: Radar Crosshair & Emerald Satellite Ring */
+.h-ring-2 {
+  width: 395px;
+  height: 395px;
+  border: 1.5px solid rgba(16, 185, 129, 0.45);
+  animation: heroRotateCCW 19s linear infinite;
+  box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.12), 0 0 20px rgba(16, 185, 129, 0.12);
+}
+
+/* Radar Cardinal Ticks */
+.h-radar-tick {
+  position: absolute;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+.tick-top { top: -5px; left: 50%; width: 2px; height: 10px; transform: translateX(-50%); }
+.tick-bottom { bottom: -5px; left: 50%; width: 2px; height: 10px; transform: translateX(-50%); }
+.tick-left { left: -5px; top: 50%; width: 10px; height: 2px; transform: translateY(-50%); }
+.tick-right { right: -5px; top: 50%; width: 10px; height: 2px; transform: translateY(-50%); }
+
+/* Hero Ring 3: Energy Groove Cyan-Green Dual Dashed Ring */
+.h-ring-3 {
+  width: 305px;
+  height: 305px;
+  border: 2px dashed rgba(6, 182, 212, 0.6);
+  border-top-color: rgba(16, 185, 129, 0.85);
+  border-bottom-color: rgba(6, 182, 212, 0.85);
+  animation: heroRotateCW 12s linear infinite;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+}
+
+/* Hero Ring 4: Innermost Holographic Core Ring */
+.h-ring-4 {
+  width: 220px;
+  height: 220px;
+  border: 2px solid transparent;
+  border-top: 2px solid rgba(245, 158, 11, 0.75);
+  border-bottom: 2px solid rgba(139, 92, 246, 0.75);
+  border-left: 1px dotted rgba(255, 255, 255, 0.3);
+  border-right: 1px dotted rgba(255, 255, 255, 0.3);
+  animation: heroRotateCCW 7.5s linear infinite;
+  box-shadow: inset 0 0 15px rgba(139, 92, 246, 0.25), 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
+/* Hero Orbiting Luminous Nodes */
+.h-ring-node {
+  position: absolute;
+  border-radius: 50%;
+  display: block;
+}
+
+.h-node-1 {
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: #8b5cf6;
+  box-shadow: 0 0 14px #8b5cf6, 0 0 25px rgba(139, 92, 246, 0.8);
+}
+
+.h-node-2a {
+  top: 50%;
+  right: -6px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: #10b981;
+  box-shadow: 0 0 14px #10b981, 0 0 22px rgba(16, 185, 129, 0.8);
+}
+
+.h-node-2b {
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: #f59e0b;
+  box-shadow: 0 0 14px #f59e0b, 0 0 22px rgba(245, 158, 11, 0.8);
+}
+
+.h-node-3 {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 9px;
+  background: #06b6d4;
+  box-shadow: 0 0 12px #06b6d4;
+}
+
+/* Infinite Rotation Keyframes */
+@keyframes heroRotateCW {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes heroRotateCCW {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+[data-theme="light"] .h-ring-1 {
+  border-top-color: rgba(124, 58, 237, 0.65);
+  border-bottom-color: rgba(217, 119, 6, 0.65);
+  border-left-color: rgba(124, 58, 237, 0.35);
+  border-right-color: rgba(217, 119, 6, 0.35);
+}
+
+[data-theme="light"] .h-ring-2 {
+  border-color: rgba(5, 150, 105, 0.45);
+}
+
+[data-theme="light"] .h-ring-3 {
+  border-color: rgba(2, 132, 199, 0.5);
+  border-top-color: rgba(5, 150, 105, 0.7);
+  border-bottom-color: rgba(2, 132, 199, 0.7);
+}
+
+[data-theme="light"] .h-ring-4 {
+  border-top-color: rgba(217, 119, 6, 0.7);
+  border-bottom-color: rgba(124, 58, 237, 0.7);
+}
+
+/* 3D Motion Box */
+.avatar-motion-box {
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Free Transparent 3D Avatar */
+.hero-transparent-avatar {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.45));
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+[data-theme="light"] .hero-transparent-avatar {
+  filter: drop-shadow(0 15px 25px rgba(2, 132, 199, 0.25));
+}
+
+/* =========================================
+   Floating 3D Tech Badges & Live Status Pills
+   ========================================= */
+.floating-tech-badge {
+  position: absolute;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 4;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.floating-tech-badge:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
+}
+
+.badge-top-left {
+  top: 12%;
+  left: -25px;
+}
+
+.badge-top-right {
+  top: 8%;
+  right: -25px;
+}
+
+.badge-bottom-left {
+  bottom: 22%;
+  left: -35px;
+}
+
+.badge-bottom-right {
+  bottom: 14%;
+  right: -25px;
+}
+
+.tech-badge-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.react-icon {
+  background: rgba(6, 182, 212, 0.15);
+  color: #06b6d4;
+  border: 1px solid rgba(6, 182, 212, 0.35);
+}
+
+.mern-icon {
+  background: rgba(236, 72, 153, 0.15);
+  color: #ec4899;
+  border: 1px solid rgba(236, 72, 153, 0.35);
+}
+
+.db-icon {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.live-status-dot {
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pulse-green 1.8s infinite;
+  margin-left: 2px;
+}
+
+.badge-main-text {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-primary) !important;
+  display: block;
+  line-height: 1.2;
+}
+
+.badge-sub-text {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--text-muted) !important;
+  display: block;
+}
+
+@media (max-width: 1199px) {
+  .badge-top-left { left: -10px; }
+  .badge-top-right { right: -10px; }
+  .badge-bottom-left { left: -15px; }
+  .badge-bottom-right { right: -10px; }
 }
 
 @media (max-width: 991px) {
   .hero-title {
-    font-size: 55px;
+    font-size: 50px;
   }
 
   .hero-subtitle {
-    font-size: 26px;
+    font-size: 25px;
   }
   
   .hero-description {
@@ -117,76 +483,68 @@
     margin: 0 auto 30px auto; 
   }
 
-  .hero-image {
-    max-width: 350px;
-    margin-top: 40px;
+  .hero-avatar-stage {
+    min-height: 380px;
   }
-}
 
+  .hero-rings-container {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  .hero-transparent-avatar {
+    max-width: 310px;
+  }
+
+  .floating-tech-badge {
+    padding: 6px 10px;
+  }
+
+  .badge-top-left { top: 5%; left: 0; }
+  .badge-top-right { top: 2%; right: 0; }
+  .badge-bottom-left { bottom: 15%; left: 0; }
+  .badge-bottom-right { bottom: 8%; right: 0; }
+}
 
 @media (max-width: 767px) {
   .hero-section {
-    padding: 100px 0; 
+    padding: 110px 0 50px 0; 
     min-height: auto; 
   }
 
   .hero-title {
-    font-size: 40px;
+    font-size: 38px;
   }
 
   .hero-subtitle {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .hero-description {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
-    letter-spacing: 0.3px;
   }
 
-  .hero-image {
-    max-width: 280px; 
-  }
-}
-
-
-
-/* Purana code exactly waisa hi rahega (hero-title, subtitle, hero-btn etc.) */
-
-/* =========================================
-   Naya "Download CV" Button (Outline Style)
-   ========================================= */
-.hero-btn-outline {
-  padding: 12px 35px;
-  border: 2px solid #38bdf8; /* Cyan theme border */
-  background: transparent;
-  color: #38bdf8;
-  border-radius: 30px;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none; /* Link se underline hatane ke liye */
-  display: inline-flex;
-  align-items: center;
-  transition: all 0.4s ease;
-}
-
-.hero-btn-outline:hover {
-  background: rgba(56, 189, 248, 0.1); /* Hover par light blue background */
-  color: #ffffff; /* Text white ho jayega */
-  border-color: #e247be; /* Border pinkish ho jayegi */
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
-}
-
-/* Button Container Spacing (Mobile Adjustments) */
-@media (max-width: 767px) {
   .hero-btn-container {
-    gap: 15px !important; /* Mobile par buttons ke beech thoda kam gap */
+    gap: 12px !important;
   }
-  
+
   .hero-btn, .hero-btn-outline {
-    width: 100%; /* Mobile par dono buttons full width ho jayenge */
-    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-avatar-stage {
+    min-height: 320px;
+  }
+
+  .hero-rings-container {
+    transform: translate(-50%, -50%) scale(0.65);
+  }
+
+  .hero-transparent-avatar {
+    max-width: 250px; 
+  }
+
+  .floating-tech-badge {
+    display: none; /* Keep clean on small mobile */
   }
 }
