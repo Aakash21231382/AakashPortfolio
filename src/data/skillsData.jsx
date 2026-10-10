@@ -43,13 +43,13 @@ const skills = [
     glowColor: 'rgba(247, 223, 30, 0.45)',
     icon: <SiJavascript />
   },
-  {
-    id: 4,
-    title: 'Python',
-    color: '#3776AB',
-    glowColor: 'rgba(55, 118, 171, 0.45)',
-    icon: <FaPython />
-  },
+  // {
+  //   id: 4,
+  //   title: 'Python',
+  //   color: '#3776AB',
+  //   glowColor: 'rgba(55, 118, 171, 0.45)',
+  //   icon: <FaPython />
+  // },
   {
     id: 5,
     title: 'React.js',
@@ -57,13 +57,13 @@ const skills = [
     glowColor: 'rgba(97, 218, 251, 0.45)',
     icon: <FaReact />
   },
-  {
-    id: 6,
-    title: 'Redux.js',
-    color: '#764ABC',
-    glowColor: 'rgba(118, 74, 188, 0.45)',
-    icon: <SiRedux />
-  },
+  // {
+  //   id: 6,
+  //   title: 'Redux.js',
+  //   color: '#764ABC',
+  //   glowColor: 'rgba(118, 74, 188, 0.45)',
+  //   icon: <SiRedux />
+  // },
   {
     id: 7,
     title: 'Bootstrap',
@@ -92,13 +92,13 @@ const skills = [
     glowColor: 'rgba(56, 189, 248, 0.45)',
     icon: <FaNetworkWired />
   },
-  {
-    id: 11,
-    title: 'MongoDB',
-    color: '#47A248',
-    glowColor: 'rgba(71, 162, 72, 0.45)',
-    icon: <SiMongodb />
-  },
+  // {
+  //   id: 11,
+  //   title: 'MongoDB',
+  //   color: '#47A248',
+  //   glowColor: 'rgba(71, 162, 72, 0.45)',
+  //   icon: <SiMongodb />
+  // },
   {
     id: 12,
     title: 'MS SQL Server',
@@ -113,13 +113,13 @@ const skills = [
     glowColor: 'rgba(214, 58, 255, 0.45)',
     icon: <FaKey />
   },
-  {
-    id: 14,
-    title: 'OAuth 2.0',
-    color: '#4285F4',
-    glowColor: 'rgba(66, 133, 244, 0.45)',
-    icon: <FaShieldAlt />
-  },
+  // {
+  //   id: 14,
+  //   title: 'OAuth 2.0',
+  //   color: '#4285F4',
+  //   glowColor: 'rgba(66, 133, 244, 0.45)',
+  //   icon: <FaShieldAlt />
+  // },
   {
     id: 15,
     title: 'Git/GitHub',
@@ -127,13 +127,13 @@ const skills = [
     glowColor: 'rgba(240, 80, 50, 0.45)',
     icon: <FaGitAlt />
   },
-  {
-    id: 16,
-    title: 'Tailwind CSS',
-    color: '#06B6D4',
-    glowColor: 'rgba(6, 182, 212, 0.45)',
-    icon: <SiTailwindcss />
-  },
+  // {
+  //   id: 16,
+  //   title: 'Tailwind CSS',
+  //   color: '#06B6D4',
+  //   glowColor: 'rgba(6, 182, 212, 0.45)',
+  //   icon: <SiTailwindcss />
+  // },
   {
     id: 17,
     title: 'AWS Cloud',

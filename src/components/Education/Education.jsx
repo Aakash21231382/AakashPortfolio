@@ -13,9 +13,8 @@ import {
 } from 'react-icons/fa';
 
 const Education = () => {
-  const [activeCategory, setActiveCategory] = useState('education'); // 'education' or 'training'
+  const [activeCategory, setActiveCategory] = useState('education'); 
 
-  // Academic Education (ITI removed as requested, structured matching user's timeline screenshot)
   const academicList = [
     {
       id: 1,
@@ -49,16 +48,12 @@ const Education = () => {
     }
   ];
 
-  // Professional Training (Full Stack Web Development - 6 Months Completed)
   const trainingData = {
-    title: "Full Stack Web Development Training & Internship",
-    role: "Full Stack Web Developer Intern",
+    title: "Full Stack Web Development ",
+    role: "Full Stack Web Developer ",
     institution: "Taksh IT Solutions Private Limited",
     location: "Noida, Sector 62, Uttar Pradesh, India",
-    duration: "March 2026 - August 2026 (6 Months)",
-    status: "Completed (6 Months)",
-    isCompleted: true,
-    overview: "Successfully completed an intensive 6-month professional industry training program in Full Stack Web Development. Gained comprehensive end-to-end expertise in architecting reactive frontend interfaces with React.js, designing robust backend RESTful APIs with Node.js & Express, and managing relational database architectures with MS SQL Server.",
+    overview: "Worked on full stack web development at Taksh IT Solutions Pvt. Ltd., building complete web applications end to end. Developed responsive frontend interfaces with React.js, designed RESTful APIs with Node.js and Express.js, and integrated them with a database. Delivered 2 complete projects: Askvora, a tutor marketplace, and a Doctor Appointment and Admin Approval System.",
     highlights: [
       "End-to-end Full Stack web application development leveraging React.js, Node.js, Express.js, and MS SQL Server",
       "Engineered secure RESTful APIs, JWT user authentication, and middleware protocols with Express & Node",
@@ -85,8 +80,7 @@ const Education = () => {
   return (
     <section className="education-section" id="education">
       <div className="container">
-        
-        {/* Section Header */}
+      
         <div className="text-center mb-4">
           <span className="section-badge badge-education">Academic & Training Roadmap</span>
           <h2 className="section-title mt-2">
@@ -97,7 +91,6 @@ const Education = () => {
           </p>
         </div>
 
-        {/* Section Category Switcher (Education vs Training) */}
         <div className="edu-nav-tabs-wrapper mb-5">
           <div className="edu-nav-tabs">
             <button
@@ -112,19 +105,12 @@ const Education = () => {
               className={`edu-tab-btn ${activeCategory === 'training' ? 'active-tab' : ''}`}
               onClick={() => setActiveCategory('training')}
             >
-              <FaLaptopCode className="me-2" fontSize={24}/> Professional Training
-              <span className="tab-pulse-badge">6 Months</span>
+              <FaLaptopCode className="me-2" fontSize={24}/> Experience
             </button>
           </div>
         </div>
-
-        {/* Dynamic Content Display */}
         <AnimatePresence mode="wait">
           {activeCategory === 'education' ? (
-            
-            /* =========================================
-               1. Alternating Vertical Timeline View
-               ========================================= */
             <motion.div
               key="education-timeline"
               initial={{ opacity: 0, y: 20 }}
@@ -141,16 +127,13 @@ const Education = () => {
                     key={item.id} 
                     className={`edu-timeline-row ${item.side === 'left' ? 'row-left' : 'row-right'}`}
                   >
-                    {/* Center Glowing Node Ring */}
                     <div className="edu-timeline-node">
                       <div className="node-outer-ring">
                         <div className="node-inner-dot"></div>
                       </div>
                     </div>
 
-                    {/* Timeline Card */}
                     <div className="edu-timeline-card">
-                      {/* Arrow pointer towards node */}
                       <div className={`card-pointer-arrow arrow-${item.side}`}></div>
 
                       <div className="edu-card-header">
@@ -182,9 +165,6 @@ const Education = () => {
 
           ) : (
 
-            /* =========================================
-               2. Professional Training Showcase Card
-               ========================================= */
             <motion.div
               key="training-showcase"
               initial={{ opacity: 0, scale: 0.96 }}

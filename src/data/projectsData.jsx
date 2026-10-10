@@ -245,7 +245,7 @@ const projects = [
       "A fully functional doctor appointment booking system built on the MERN stack. It includes a dedicated Doctor Admin panel for seamless hospital management. Patients can easily find certified specialists, book appointments 24/7, and make secure payments via Stripe integration. The platform offers a highly responsive UI with emergency call features and service browsing.",
     image: MedicareImage,
     liveLink: "https://appontments-doctor.netlify.app/",
-    githubLink: "https://github.com/Aakash21231382/Medicare.git",
+    githubLink: "https://github.com/Aakash21231382/Doctor-Appointment-",
     accentColor: "#FF8C00",
     glowColor: "rgba(255, 140, 0, 0.35)",
     features: [
