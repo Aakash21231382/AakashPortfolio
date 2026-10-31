@@ -6,6 +6,7 @@ import TitanFitness from "../assets/TitanFitness.png";
 import TitanAdmin from "../assets/TitanAdmin.png";
 import MedicareImage from "../assets/medicare.png";
 import AstrologyImage from "../assets/AstrologyImage.png";
+import MentoringMindsImage from "../assets/MentoringMindsImage.png"
 
 const projects = [
   {
@@ -300,6 +301,63 @@ const projects = [
       { name: "WebRTC", color: "#333333" },
       { name: "Razorpay", color: "#0C2340" },
       { name: "CSS3", color: "#264DE4" },
+    ],
+  },
+  {
+    id: 9,
+    title: "MentoringMinds - Education & E-Learning Platform",
+    category: "Education & Online Learning Platform",
+    type: "fullstack",
+    isSpotlight: true,
+  
+    tagline:
+      "A Modern Education Platform Connecting Students with Industry-Ready Courses, Certifications & Expert Mentorship.",
+  
+    description:
+      "A responsive full-stack educational platform designed to help students explore professional courses, certifications, study abroad opportunities, and mentorship programs. Built using React.js, Node.js, Express.js, MS SQL Server, Bootstrap, and modern web technologies. The platform includes a dynamic student-facing website and a dedicated Admin Dashboard for managing educational content, courses, banners, and platform operations. Integrated payment gateway functionality and a fully responsive UI optimized for desktop, tablet, and mobile devices.",
+  
+    image: MentoringMindsImage,
+  
+    liveLink: "https://mentorgmindes.netlify.app/",
+    githubLink: "https://github.com/Aakash21231382/mentorgminds.git",
+  
+    accentColor: "#F6881F",
+    glowColor: "rgba(246, 136, 31, 0.35)",
+  
+    features: [
+      "🎓 [Student Portal]: Modern educational website to explore courses, certifications, mentorship programs, and study abroad opportunities",
+  
+      "📚 [Course Management]: Dynamic course listing, course categories, and educational program management",
+  
+      "🛡️ [Admin Dashboard]: Dedicated admin panel to manage courses, banners, educational content, and platform operations",
+  
+      "🔐 [Authentication & Security]: Secure admin authentication with JWT-based authorization and protected routes",
+  
+      "💳 [Payment Gateway]: Online payment gateway integration for secure payment processing",
+  
+      "🖼️ [Dynamic Banner Management]: Admin can add and manage website banners with image upload functionality",
+  
+      "🔎 [Search Functionality]: Search courses, skills, and universities through the website search interface",
+  
+      "📱 [Fully Responsive Design]: Optimized layouts for desktop, tablet, and mobile screens",
+  
+      "🎨 [Modern UI/UX]: Clean and attractive interface with Bootstrap, custom CSS, and React Icons",
+  
+      "⚡ [RESTful APIs]: Backend API development using Node.js and Express.js with MS SQL Server database integration"
+    ],
+  
+    techStack: [
+      { name: "HTML5", color: "#E34F26" },
+      { name: "CSS3", color: "#264DE4" },
+      { name: "Bootstrap", color: "#7952B3" },
+      { name: "React.js", color: "#61DAFB" },
+      { name: "Node.js", color: "#22C55E" },
+      { name: "Express.js", color: "#000000" },
+      { name: "MS SQL Server", color: "#CC292B" },
+      { name: "JavaScript", color: "#F7DF1E" },
+      { name: "REST APIs", color: "#009688" },
+      { name: "Payment Gateway", color: "#0C2340" },
+      { name: "React Icons", color: "#E91E63" }
     ],
   },
 ];
